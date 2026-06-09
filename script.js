@@ -2,10 +2,34 @@
 // OPEN GIFT
 // =========================
 
-function openGift(){
+function openGift() {
+    window.location.href = "pages/dashboard.html";
+}
 
-window.location.href =
-"pages/dashboard.html";
+function openEnvelope() {
+
+    localStorage.setItem(
+        "musicStarted",
+        "true"
+    );
+
+    const envelope =
+        document.querySelector(
+            ".envelope"
+        );
+
+    if (envelope) {
+        envelope.classList.add(
+            "open"
+        );
+    }
+
+    setTimeout(() => {
+
+        window.location.href =
+            "pages/dashboard.html";
+
+    }, 1500);
 
 }
 
@@ -14,47 +38,47 @@ window.location.href =
 // =========================
 
 const startDate =
-new Date("2025-06-17");
+    new Date("2025-06-17");
 
-function updateCountdown(){
+function updateCountdown() {
 
-const now =
-new Date();
+    const now =
+        new Date();
 
-const diff =
-now - startDate;
+    const diff =
+        now - startDate;
 
-const days =
-Math.floor(
-diff /
-(1000*60*60*24)
-);
+    const days =
+        Math.floor(
+            diff /
+            (1000 * 60 * 60 * 24)
+        );
 
-const hours =
-Math.floor(
-(diff/(1000*60*60)) % 24
-);
+    const hours =
+        Math.floor(
+            (diff / (1000 * 60 * 60)) % 24
+        );
 
-const minutes =
-Math.floor(
-(diff/(1000*60)) % 60
-);
+    const minutes =
+        Math.floor(
+            (diff / (1000 * 60)) % 60
+        );
 
-const seconds =
-Math.floor(
-(diff/1000) % 60
-);
+    const seconds =
+        Math.floor(
+            (diff / 1000) % 60
+        );
 
-const countdown =
-document.getElementById(
-"countdown"
-);
+    const countdown =
+        document.getElementById(
+            "countdown"
+        );
 
-if(countdown){
+    if (countdown) {
 
-countdown.innerHTML =
+        countdown.innerHTML =
 
-`
+            `
 ❤️ ${days} Hari
 
 🕒 ${hours} Jam
@@ -64,180 +88,107 @@ countdown.innerHTML =
 💖 ${seconds} Detik
 `;
 
-}
+    }
 
 }
 
 updateCountdown();
 
 setInterval(
-updateCountdown,
-1000
+    updateCountdown,
+    1000
 );
 
 // =========================
 // HEART EFFECT
 // =========================
 
-function createHeart(){
+function createHeart() {
 
-const container =
-document.querySelector(
-".hearts-container"
-);
+    const container =
+        document.querySelector(
+            ".hearts-container"
+        );
 
-if(!container) return;
+    if (!container) return;
 
-const heart =
-document.createElement("div");
+    const heart =
+        document.createElement(
+            "div"
+        );
 
-heart.classList.add(
-"heart-fall"
-);
+    heart.classList.add(
+        "heart-fall"
+    );
 
-heart.innerHTML = "❤️";
+    heart.innerHTML = "❤️";
 
-heart.style.left =
-Math.random()*100 + "vw";
+    heart.style.left =
+        Math.random() * 100 +
+        "vw";
 
-heart.style.fontSize =
-Math.random()*20+15+"px";
+    heart.style.fontSize =
+        Math.random() * 20 +
+        15 +
+        "px";
 
-container.appendChild(
-heart
-);
+    container.appendChild(
+        heart
+    );
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-heart.remove();
+        heart.remove();
 
-},8000);
+    }, 8000);
 
 }
 
 setInterval(
-createHeart,
-1000
+    createHeart,
+    1000
 );
 
-const bgMusic =
-document.getElementById("bgMusic");
+// =========================
+// BACKGROUND MUSIC
+// =========================
 
-if(bgMusic){
+window.addEventListener(
+    "load",
+    () => {
 
-const savedTime =
-localStorage.getItem("musicTime");
+        const bgMusic =
+            document.getElementById(
+                "bgMusic"
+            );
 
-if(savedTime){
+        if (!bgMusic) return;
 
-bgMusic.currentTime =
-savedTime;
+        const savedTime =
+            localStorage.getItem(
+                "musicTime"
+            );
 
-}
+        if (savedTime) {
 
-bgMusic.addEventListener(
-"timeupdate",
-()=>{
+            bgMusic.currentTime =
+                parseFloat(
+                    savedTime
+                );
 
-localStorage.setItem(
-"musicTime",
-bgMusic.currentTime
-);
+        }
 
-});
+        bgMusic.addEventListener(
+            "timeupdate",
+            () => {
 
-}
+                localStorage.setItem(
+                    "musicTime",
+                    bgMusic.currentTime
+                );
 
+            }
+        );
 
-function openEnvelope(){
-
-const envelope =
-document.querySelector(
-".envelope"
-);
-
-envelope.classList.add(
-"open"
-);
-
-setTimeout(()=>{
-
-window.location.href =
-"pages/dashboard.html";
-
-},2000);
-
-}
-
-function openEnvelope() {
-
-const music =
-document.getElementById(
-"bgMusic"
-);
-
-music.play();
-
-window.location.href =
-"pages/dashboard.html";
-
-}
-
-function openEnvelope(){
-
-localStorage.setItem(
-"musicStarted",
-"true"
-);
-
-window.location.href =
-"pages/dashboard.html";
-
-}
-
-function openEnvelope(){
-
-localStorage.setItem(
-"musicStarted",
-"true"
-);
-
-window.location.href =
-"pages/dashboard.html";
-
-}
-
-
-window.onload = () => {
-
-const music =
-document.getElementById(
-"bgMusic"
-);
-
-music.play().catch(()=>{
-
-console.log(
-"Safari blocked autoplay"
-);
-
-});
-
-};
-
-const music =
-document.getElementById("bgMusic");
-
-document.addEventListener(
-"click",
-() => {
-
-if(localStorage.getItem("musicStarted")){
-
-music.play();
-
-}
-
-},
-{ once:true }
+    }
 );

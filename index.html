@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Special Gift ❤️</title>
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -24,51 +22,79 @@ rel="stylesheet">
     <div class="hero">
 
         <h1>Special Gift ❤️</h1>
-    <p class="subtitle">
 
-        A little surprise made
-        with all my love ❤️
-
+        <p class="subtitle">
+            A little surprise made with all my love ❤️
         </p>
+
         <p>
             A special surprise made with love
         </p>
 
-        <div class="envelope-container"
-        onclick="openEnvelope()">
+        <div class="envelope-container" onclick="openEnvelope()">
 
-        <div class="envelope">
+            <div class="envelope">
 
-        <div class="flap"></div>
+                <div class="flap"></div>
 
-<div class="letter">
+                <div class="letter">
+                    💌
+                </div>
 
-💌
+            </div>
 
-</div>
+            <p>
+                Klik Untuk Membuka Surat
+            </p>
 
-</div>
+        </div>
 
-<p>
-Klik Untuk Membuka Surat
-</p>
+        <br>
 
-</div>
+        <button id="playMusic">
+            🎵 Putar Musik
+        </button>
 
     </div>
 
+</div>
+
 <audio id="bgMusic" loop>
 
-<source src="assets/ari laso.mp3" type="audio/mpeg">
+    <source src="assets/ari laso.mp3" type="audio/mpeg">
 
 </audio>
 
-<button id="playMusic">
-🎵 Play Music
-</button>
+<div class="hearts-container"></div>
+
+<script>
+
+const bgMusic =
+document.getElementById(
+"bgMusic"
+);
+
+document
+.getElementById(
+"playMusic"
+)
+.addEventListener(
+"click",
+function(){
+
+bgMusic.play();
+
+localStorage.setItem(
+"musicStarted",
+"true"
+);
+
+}
+);
+
+</script>
 
 <script src="script.js"></script>
 
-<div class="hearts-container"></div>
 </body>
 </html>
