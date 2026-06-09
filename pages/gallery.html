@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Album Kenangan ❤️</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="hearts-container"></div>
+
+<div class="navbar">
+
+<a href="dashboard.html">🏠 Home</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="letter.html">💌 Letter</a>
+
+</div>
+
+<div class="overlay">
+
+<div class="dashboard">
+
+<h1>📖 Album Kenangan ❤️</h1>
+
+<div class="album-container">
+
+<div class="album-page">
+
+<img
+id="albumPhoto"
+src="../assets/photos/1.jpeg"
+alt="Album Foto">
+
+<h2>
+❤️ Our Memories ❤️
+</h2>
+
+</div>
+
+<div class="album-buttons">
+
+<button onclick="prevPhoto()">
+⬅️ Sebelumnya
+</button>
+
+<button onclick="nextPhoto()">
+Berikutnya ➡️
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+<source src="../assets/ari laso.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const photos = [
+
+"../assets/photos/1.jpeg",
+"../assets/photos/2.jpeg",
+"../assets/photos/3.jpeg",
+"../assets/photos/4.jpeg",
+"../assets/photos/5.jpeg",
+"../assets/photos/6.jpeg",
+"../assets/photos/7.jpeg",
+"../assets/photos/8.jpeg",
+"../assets/photos/9.jpeg",
+"../assets/photos/10.jpeg",
+
+"../assets/photos/11.jpeg",
+"../assets/photos/12.jpeg",
+"../assets/photos/13.jpeg",
+"../assets/photos/14.jpeg",
+"../assets/photos/15.jpeg",
+"../assets/photos/16.jpeg",
+"../assets/photos/17.jpeg",
+"../assets/photos/18.jpeg",
+"../assets/photos/19.jpeg",
+"../assets/photos/20.jpeg",
+
+"../assets/photos/21.jpeg",
+"../assets/photos/22.jpeg",
+"../assets/photos/23.jpeg",
+"../assets/photos/24.jpeg",
+"../assets/photos/25.jpeg",
+"../assets/photos/26.jpeg",
+"../assets/photos/27.jpeg",
+"../assets/photos/28.jpeg",
+"../assets/photos/29.jpeg",
+"../assets/photos/30.jpeg"
+
+];
+
+let current = 0;
+
+function showPhoto(){
+
+document.getElementById(
+"albumPhoto"
+).src = photos[current];
+
+}
+
+function nextPhoto(){
+
+current++;
+
+if(current >= photos.length){
+
+current = 0;
+
+}
+
+showPhoto();
+
+}
+
+function prevPhoto(){
+
+current--;
+
+if(current < 0){
+
+current = photos.length - 1;
+
+}
+
+showPhoto();
+
+}
+
+</script>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moment ❤️</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div class="hearts-container"></div>
+
+<div class="navbar">
+<a href="dashboard.html">🏠 Home</a>
+<a href="gallery.html">🖼 Gallery</a>
+<a href="music.html">🎵 Music</a>
+</div>
+
+<div class="overlay">
+<div class="dashboard">
+
+<h1>⏳ Special Moments</h1>
+
+<div class="timeline">
+
+<div class="timeline-item"
+onclick="openMoment(
+'❤️ Pertama Kenal',
+'../assets/momen/Telegram.jpeg',
+'awal kenlan kami saling mengenal dari aplikasi Telegram,dan kami bertemu di grub yang bernama leo math'
+)">
+❤️ Pertama Kenal
+</div>
+
+<div class="timeline-item"
+onclick="openMoment(
+'💌 Pertama Chat',
+'../assets/momen/awal chetan.jpeg',
+'dan saya yang pertama kali mencoba untuk chet dia,dan cehatan itu makin lama dan makin intens dan kamu saling bertukar kabar satu sama lain '
+)">
+💌 Pertama Chat
+</div>
+
+<div class="timeline-item"
+onclick="openMoment(
+'🌹 Pertama Ketemu',
+'../assets/momen/pertama ketemu.jpeg',
+'setelah kami berhubungan satu sama lain di whatsapp sayapun memutuskan untuk datang kerumahnya untuk bertemu'
+)">
+🌹 Pertama Ketemu
+</div>
+
+<div class="timeline-item"
+onclick="openMoment(
+'💍 Jadian',
+'../assets/momen/jadian.jpeg',
+'selang beberapa hari kami ketemu saya memutuskan untuk nembak dia lewat vidio call dan akhirnya kami resmi berpacaran pada tanggal 17juni 2025'
+)">
+💍 Jadian
+</div>
+
+<div class="timeline-item"
+onclick="openMoment(
+'🎉 Anniversary',
+'../assets/momen/eniversery.jpeg',
+'tepat pada hari ini 17 juni 2026 kami merayakan anniversary yang pertama dengan penuh kebahagiaan dan haru'
+)">
+🎉 Anniversary
+</div>
+
+</div>
+</div>
+
+<div id="momentPopup">
+
+<div class="popup-card">
+
+<h2 id="popupTitle"></h2>
+
+<img
+id="popupImage"
+class="popup-image">
+
+<p id="popupStory"></p>
+
+<button
+onclick="closeMoment()">
+
+❌ Tutup
+
+</button>
+
+</div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+<source
+src="../assets/ari laso.mp3"
+type="audio/mpeg">
+</audio>
+
+<script>
+
+function openMoment(
+title,
+image,
+story
+){
+
+document.getElementById(
+"popupTitle"
+).innerHTML = title;
+
+document.getElementById(
+"popupImage"
+).src = image;
+
+document.getElementById(
+"popupStory"
+).innerHTML = story;
+
+document.getElementById(
+"momentPopup"
+).style.display =
+"flex";
+
+}
+
+function closeMoment(){
+
+document.getElementById(
+"momentPopup"
+).style.display =
+"none";
+
+}
+
+</script>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>

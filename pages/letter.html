@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letter ❤️</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div class="hearts-container"></div>
+
+<div class="navbar">
+<a href="dashboard.html">🏠 Home</a>
+</div>
+
+<div class="overlay">
+<div class="dashboard">
+
+<h1>💌 Letter For You</h1>
+
+<div class="letter-box">
+
+<p id="typing-text"></p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+const text = `
+Selamat anniversary, cintaku. ❤️
+
+Tidak terasa waktu berjalan begitu cepat. Banyak hal yang sudah kita lalui bersama, mulai dari tawa yang membuat kita bahagia,
+hingga air mata yang mengajarkan kita untuk tetap bertahan. Semua itu menjadi bagian dari perjalanan indah yang tidak akan 
+pernah aku lupakan. Terima kasih karena selalu ada di sampingku, menerima segala kekurangan dan kelemahanku. Terima kasih 
+karena tetap memilih bertahan bahkan di saat keadaan tidak selalu mudah. Kehadiranmu telah mengubah banyak hal dalam hidupku 
+menjadi lebih berarti dan penuh warna. Aku mungkin bukan pasangan yang sempurna. Aku mungkin pernah membuatmu kecewa, 
+membuatmu sedih, atau bahkan membuatmu menangis. Untuk semua itu, aku meminta maaf. Namun percayalah, tidak pernah ada satu 
+hari pun aku berhenti bersyukur karena memilikimu. Jika suatu hari nanti aku ditanya tentang hadiah terbaik yang pernah 
+diberikan Tuhan dalam hidupku, maka jawabannya adalah dirimu. Kamu adalah rumah tempat aku pulang, tempat aku bercerita, 
+dan tempat aku menemukan ketenangan ketika dunia terasa begitu melelahkan. Di hari istimewa ini, aku hanya ingin kamu tahu 
+bahwa cintaku tidak berkurang sedikit pun. Justru setiap hari aku semakin yakin bahwa aku ingin terus berjalan bersamamu, 
+melewati segala musim kehidupan yang akan datang. Terima kasih untuk semua kenangan yang telah kita ciptakan. Terima kasih 
+karena masih menggenggam tanganku hingga hari ini. Semoga cinta kita selalu tumbuh, selalu kuat, dan selalu menjadi alasan
+bagi kita untuk tersenyum.Aku mencintaimu hari ini, esok, dan sampai kapan pun. Selamat anniversary, sayangku. ❤️
+<h1> (papipul_04) </h1>
+`;
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+document.getElementById(
+"typing-text"
+).innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,50);
+
+}
+
+}
+
+typeWriter();
+
+</script>
+
+<audio id="bgMusic" autoplay loop>
+<source
+src="../assets/ari laso.mp3"
+type="audio/mpeg">
+</audio>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>
