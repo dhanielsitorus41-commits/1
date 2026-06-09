@@ -182,3 +182,62 @@ window.location.href =
 "pages/dashboard.html";
 
 }
+
+function openEnvelope(){
+
+localStorage.setItem(
+"musicStarted",
+"true"
+);
+
+window.location.href =
+"pages/dashboard.html";
+
+}
+
+function openEnvelope(){
+
+localStorage.setItem(
+"musicStarted",
+"true"
+);
+
+window.location.href =
+"pages/dashboard.html";
+
+}
+
+
+window.onload = () => {
+
+const music =
+document.getElementById(
+"bgMusic"
+);
+
+music.play().catch(()=>{
+
+console.log(
+"Safari blocked autoplay"
+);
+
+});
+
+};
+
+const music =
+document.getElementById("bgMusic");
+
+document.addEventListener(
+"click",
+() => {
+
+if(localStorage.getItem("musicStarted")){
+
+music.play();
+
+}
+
+},
+{ once:true }
+);
